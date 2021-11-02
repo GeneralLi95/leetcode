@@ -10,6 +10,7 @@
 哈希表，做一个结果列表，记录下位置，然后符合结果立刻对应过去。Python 哈希表 `enumerate`
 
 ## 代码
+Python 的哈希表是Enumerate
 ```python3
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -20,5 +21,22 @@ class Solution:
             else:
                 a[num] = i
         return none
+```
+Java的哈希表是 Map或者HashMap
+
+```Java
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i< nums.length; i++) {
+            if(map.containsKey(target - nums[i])) {
+                return new int[] {map.get(target-nums[i]),i};
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+}
 ```
 
