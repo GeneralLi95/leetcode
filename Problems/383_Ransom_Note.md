@@ -6,8 +6,8 @@
 这个题英文翻译成中文叫赎金信，很有赎回的味道，一个magazines里面的字符可以赎回一个ransom里面的字符。所以就遍历ransom字符串，每遍历一个在magazine字符串里面删除一个，如果能够遍历完成，返回true，否则返回false。那么中间异常情况最好的处理办法就是Python中的 try except语句。
 
 ## 代码
-```python
 
+```python
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         a = list(ransomNote)
