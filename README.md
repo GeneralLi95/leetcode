@@ -1,5 +1,7 @@
 # LeetCode 解题记录
 LeetCode 账号 zjwfc
+
+2021.12.28 把仓库主分支从 GitHub 移到了 Gitee，GitHub 遇到的网络限制实在是太大了。
 ## 进度
 
 \# |Title|Solution| Type | Difficulty |
