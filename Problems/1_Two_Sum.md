@@ -11,7 +11,7 @@
 
 ## 代码
 Python 的哈希表是Enumerate
-```python3
+```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         a = {}
