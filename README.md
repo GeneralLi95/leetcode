@@ -2,9 +2,9 @@
 LeetCode 账号 zjwfc
 ## 进度
 
-\# |题目|题解| 类型 | 难度 |
+\# |Title|Solution| Type | Difficulty |
 ---|---|---|---|---|
-1|[Two Sum](https://leetcode-cn.com/problems/two-sum/)|[Python_Java](./Problems/1_Two_Sum.md)|数组，哈希表|Easy|
+1|[Two Sum](https://leetcode-cn.com/problems/two-sum/)|[Python](Python/1.py), [Java](Java/twosum.java)|数组，哈希表|Easy|
 20|[Valid Parentheses](https://leetcode-cn.com/problems/valid-parentheses/)|[Python](./Problems/20_Valid_Parentheses.md)|栈，字符串|Easy
 344|[Reverse String](https://leetcode-cn.com/problems/reverse-string/)|[Python](./Problems/344_Reverse_String.md)|双指针，字符串|Easy
 575|[Distribute Candies](https://leetcode-cn.com/problems/distribute-candies/)|[Python](./Problems/575_Distribute_Candies.md)|哈希表|Easy
