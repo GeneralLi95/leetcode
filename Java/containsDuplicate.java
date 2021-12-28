@@ -1,0 +1,18 @@
+import java.util.HashSet;
+import java.util.Set;
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<Integer>();
+        for (int x :nums) {
+            if(set.contains(x)){
+                return true;
+            }
+            else{
+                set.add(x);
+            }
+        }
+        return false;
+    }
+
+}
