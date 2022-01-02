@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# 判断链表是否有环
 class ListNode:
 	def __init__(self, x):		
 		self.val = x

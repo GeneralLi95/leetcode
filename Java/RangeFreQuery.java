@@ -3,7 +3,7 @@
     class RangeFreqQuery {
         int[] myList_a;
         public RangeFreqQuery(int[] arr) {
-            this.myList_a = arr;
+                this.myList_a = arr;
             
         }
         
