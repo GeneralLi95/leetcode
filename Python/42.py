@@ -17,17 +17,26 @@ class ListNode:
 		self.next = next
 
 # -------------------------
-		
 class Solution:
 	def trap(self, height: List[int]) -> int:
+		ans = 0
+		stack = list()
 		n = len(height)
-		for i in range(n):
-			if height[i] == 0:
-				continue
+		
+		for i, h in enumerate(height):
+			while stack and h > height[stack[-1]]:
+				top = stack.pop()
+				if not stack:
+					break
+				left = stack[-1]
+				currWidth = i - left - 1
+				currHeight = min(height[left], height[i]) - height[top]
+				ans += currWidth * currHeight
+			stack.append(i)
 			
-			l.apppend(i)
-			
-			if height[i] >= height[l]
+		return ans 
+				
+
 # -------------------------
 		
 a = Solution()
