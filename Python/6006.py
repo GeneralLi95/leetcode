@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# @Date       : 2022/2/12 
-# @Filename   : 3.py 无重复字符的最长子串
+# @Date       : 2022/2/13 
+# @Filename   : 6006.py
 # @Tag        :
 # @Autor      : LI YAO
 # @Difficulty :
@@ -18,28 +18,22 @@ class ListNode:
 
 # -------------------------
 class Solution:
-	def lengthOfLongestSubstring(self, s: str) -> int:
-		if len(s) == 0:
-			return 0
+	def minimumRemoval(self, beans: List[int]) -> int:		
+		beans.sort()
+		right = sum(beans)
 		left = 0
-		lookup = set()
-		n = len(s)
-		max_len = 0
-		cur_len = 0
-		for i in range(n):
-			cur_len += 1
-			while s[i] in lookup:
-				lookup.remove(s[left])
-				left += 1
-				cur_len -= 1
-			if cur_len > max_len : max_len = cur_len
-			lookup.add(s[i])
-		return max_len
-		
-		
+		res = []
+		for i, b in enumerate(beans):
+			
+			right = right - b
+			result = left + right - b * (len(beans) - i - 1)
+
+			res.append(result)
+			left += b
+		return min(res)
 # -------------------------
 		
 a = Solution()
-b= "pwwkew"
+b = [4,1,6,5]
 
-a.lengthOfLongestSubstring(b)
+print(a.minimumRemoval(b))

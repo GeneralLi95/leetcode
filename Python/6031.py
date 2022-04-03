@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# @Date       : 2022/2/12 
-# @Filename   : 3.py 无重复字符的最长子串
+# @Date       : 2022/3/13 
+# @Filename   : 6031.py
 # @Tag        :
 # @Autor      : LI YAO
 # @Difficulty :
@@ -18,28 +18,22 @@ class ListNode:
 
 # -------------------------
 class Solution:
-	def lengthOfLongestSubstring(self, s: str) -> int:
-		if len(s) == 0:
-			return 0
-		left = 0
-		lookup = set()
-		n = len(s)
-		max_len = 0
-		cur_len = 0
+	def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:		
+		n = len(nums)
+		result = []
 		for i in range(n):
-			cur_len += 1
-			while s[i] in lookup:
-				lookup.remove(s[left])
-				left += 1
-				cur_len -= 1
-			if cur_len > max_len : max_len = cur_len
-			lookup.add(s[i])
-		return max_len
-		
+			for j in range(n):
+				if abs(i-j) <= k and nums[j] == key:
+					result.append(i)
+					break
+		return result
 		
 # -------------------------
 		
 a = Solution()
-b= "pwwkew"
+nums1 = [3,4,9,1,3,9,5]
+nums2 = [2,2,2,2,2]
+key1 = 9
+k1 = 1
 
-a.lengthOfLongestSubstring(b)
+print(a.findKDistantIndices(nums2, 2, 2))

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-# @Date       : 2022/2/12 
-# @Filename   : 3.py 无重复字符的最长子串
+# @Date       : 2022/2/10 
+# @Filename   : 1447.py 最简分数
 # @Tag        :
 # @Autor      : LI YAO
 # @Difficulty :
 
+from math import gcd
 from heapq import *
 from typing import List,  Optional
 from collections import defaultdict, deque, Counter
@@ -18,28 +19,17 @@ class ListNode:
 
 # -------------------------
 class Solution:
-	def lengthOfLongestSubstring(self, s: str) -> int:
-		if len(s) == 0:
-			return 0
-		left = 0
-		lookup = set()
-		n = len(s)
-		max_len = 0
-		cur_len = 0
-		for i in range(n):
-			cur_len += 1
-			while s[i] in lookup:
-				lookup.remove(s[left])
-				left += 1
-				cur_len -= 1
-			if cur_len > max_len : max_len = cur_len
-			lookup.add(s[i])
-		return max_len
-		
-		
+	def simplifiedFractions(self, n: int) -> List[str]:		
+		res = []
+		for i in range(2,n+1):
+			for j in range(1,i):
+				if gcd(i, j) == 1:
+					res.append(f"{j}/{i}")
+	
+		return res
 # -------------------------
 		
 a = Solution()
-b= "pwwkew"
+b = 6
 
-a.lengthOfLongestSubstring(b)
+print(a.simplifiedFractions(b))

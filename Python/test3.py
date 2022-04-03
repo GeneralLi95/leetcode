@@ -1,5 +1,17 @@
-print(int( 200 * 300 * 400 * 500))
-print(4<<2)
+import numpy as np
 
-print(bin(128)[2:])
-print(50 ^ 100 ^ 100)   # 位运算  异或得0   且 异或满足交换律和结合律 
+
+x = np.linspace(1,10,10)
+print("right",  x[1:])
+print("left ", x[:-1])
+
+x_mid = (x[:-1] + x[1:])/2
+
+print(x_mid)
+
+
+print(2**5)
+print(np.power(2,5))
+
+
+print(np.ceil(0.2))

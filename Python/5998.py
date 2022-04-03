@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# @Date       : 2022/2/12 
-# @Filename   : 3.py 无重复字符的最长子串
+# @Date       : 2022/2/19 
+# @Filename   : 5998.py
 # @Tag        :
 # @Autor      : LI YAO
 # @Difficulty :
@@ -18,28 +18,24 @@ class ListNode:
 
 # -------------------------
 class Solution:
-	def lengthOfLongestSubstring(self, s: str) -> int:
-		if len(s) == 0:
-			return 0
-		left = 0
-		lookup = set()
-		n = len(s)
-		max_len = 0
-		cur_len = 0
-		for i in range(n):
-			cur_len += 1
-			while s[i] in lookup:
-				lookup.remove(s[left])
-				left += 1
-				cur_len -= 1
-			if cur_len > max_len : max_len = cur_len
-			lookup.add(s[i])
-		return max_len
-		
-		
+	def maximumEvenSplit(self, finalSum: int) -> List[int]:
+		res = []
+		if finalSum % 2 == 1:
+			return res
+		i = 1
+		while True:
+			temp = 2 * i
+			if finalSum - temp <= temp :
+				res.append(finalSum)
+				break
+			else:
+				res.append(temp)
+				finalSum -= temp
+				i += 1
+				
+		return res
 # -------------------------
 		
 a = Solution()
-b= "pwwkew"
-
-a.lengthOfLongestSubstring(b)
+b = 28
+print(a.maximumEvenSplit(b))

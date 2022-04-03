@@ -7,3 +7,11 @@ class Solution:
             else:
                 a[num] = i
         return none
+    
+
+
+sol = Solution()
+l1 = [2, 7, 11, 15]
+t = 9
+
+print(sol.twoSum(l1, t))
