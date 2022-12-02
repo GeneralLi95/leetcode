@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# @Date       : 2022/4/9 
-# @Filename   : listnode_notes.py 链表学习记录
+# @Date       : 2022/4/16 
+# @Filename   : 6060.py
 # @Tag        :
 # @Autor      : LI YAO
 # @Difficulty :
@@ -11,20 +11,23 @@ from collections import defaultdict, deque, Counter
 from itertools import product,combinations,permutations,accumulate
 from random import choice, randrange,randint
 
-
-# 节点类
 class ListNode: 
 	def __init__(self, val=0, next=None):
 		self.val = val
 		self.next = next
 
+# -------------------------
+class Solution:
+	def findClosestNumber(self, nums: List[int]) -> int:
+		min_result = nums[0]
+		for i in nums:
+			if abs(i - 0) < abs(min_result - 0):
+				min_result = i
+			elif abs(i - 0) == abs(min_result - 0):
+				min_result = max(min_result, i)
+		return min_result
 		
-# 链表类
-class LinkedList:
-	def __init__(self):
-		self.headval = None	
 		
-
-list1 = LinkedList()
-list1.headval = ListNode(23)
-e2 = ListNode()
+# -------------------------
+		
+a = Solution()
